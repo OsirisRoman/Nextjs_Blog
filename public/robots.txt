@@ -1,0 +1,4 @@
+This file can be used to tell all search engines which pages they can index
+
+User-agent: *
+Allow: /
