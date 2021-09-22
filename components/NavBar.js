@@ -15,6 +15,20 @@ function NavBar() {
           </Link>
         </li>
       </ul>
+      <style jsx>{`
+        ul {
+          list-style-type: none;
+          padding: 0;
+        }
+
+        li {
+          display: inline;
+        }
+
+        li:not(:first-child) {
+          margin-left: 00.75rem;
+        }
+      `}</style>
     </nav>
   );
 }
