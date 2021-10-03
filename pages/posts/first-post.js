@@ -19,8 +19,9 @@ function FirstPostPage({ post }) {
         {/* <meta name="description" value="This is the FirstPost page" /> */}
       </Head>
       <main>
+        {/* Post title is empty by the moment because all the html is inside the post body */}
         <h1>{post.title}</h1>
-        <p>{post.body}</p>
+        <article dangerouslySetInnerHTML={{ __html: post.body }} />
       </main>
     </>
   );
