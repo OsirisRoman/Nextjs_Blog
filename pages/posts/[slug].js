@@ -1,8 +1,29 @@
 import Head from "next/head";
 import { getPost } from "../../lib/getPost.js";
 
-export async function getStaticProps() {
-  const post = await getPost("first-post");
+export async function getStaticPaths() {
+  return {
+    paths: [
+      {
+        params: {
+          slug: "first-post",
+        },
+      },
+      {
+        params: {
+          slug: "second-post",
+        },
+      },
+    ],
+    //The fallback: false property tells nextjs that if
+    //the path do not find any match, the 404 not
+    //found page should be showed up
+    fallback: false,
+  };
+}
+
+export async function getStaticProps({ params: { slug } }) {
+  const post = await getPost(slug);
   return {
     props: {
       post,
@@ -10,7 +31,7 @@ export async function getStaticProps() {
   };
 }
 
-function FirstPostPage({ post }) {
+function PostPage({ post }) {
   return (
     <>
       <Head>
@@ -28,4 +49,4 @@ function FirstPostPage({ post }) {
   );
 }
 
-export default FirstPostPage;
+export default PostPage;
