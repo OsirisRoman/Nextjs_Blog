@@ -1,6 +1,6 @@
 ---
 date: "2021-10-04"
-title: "First Post"
+title: "Second Post"
 ---
 
 This is my second post, written in Markdown.

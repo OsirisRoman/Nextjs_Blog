@@ -1,20 +1,26 @@
 import Head from "next/head";
-import { getPost } from "../../lib/getPost.js";
+import { getPost, getAvailableSlugs } from "../../lib/getPost.js";
 
 export async function getStaticPaths() {
+  const slugs = await getAvailableSlugs();
   return {
-    paths: [
-      {
-        params: {
-          slug: "first-post",
-        },
+    paths: slugs.map(slug => ({
+      params: {
+        slug,
       },
-      {
-        params: {
-          slug: "second-post",
-        },
-      },
-    ],
+    })),
+    // paths: [
+    //   {
+    //     params: {
+    //       slug: "first-post",
+    //     },
+    //   },
+    //   {
+    //     params: {
+    //       slug: "second-post",
+    //     },
+    //   },
+    // ],
     //The fallback: false property tells nextjs that if
     //the path do not find any match, the 404 not
     //found page should be showed up
