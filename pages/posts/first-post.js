@@ -21,6 +21,7 @@ function FirstPostPage({ post }) {
       <main>
         {/* Post title is empty by the moment because all the html is inside the post body */}
         <h1>{post.title}</h1>
+        <p>{post.date}</p>
         <article dangerouslySetInnerHTML={{ __html: post.body }} />
       </main>
     </>
