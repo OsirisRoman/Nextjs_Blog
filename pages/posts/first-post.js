@@ -1,12 +1,11 @@
 import Head from "next/head";
+import { getPost } from "../../lib/getPost.js";
 
 export async function getStaticProps() {
+  const post = await getPost("first-post");
   return {
     props: {
-      post: {
-        title: "First Post",
-        body: "My forst post, as static props.",
-      },
+      post,
     },
   };
 }
