@@ -11,6 +11,7 @@ function ThemeSwitch() {
           button {
             background: none;
             border: none;
+            color: inherit;
             cursor: pointer;
           }
         `}
