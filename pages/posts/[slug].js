@@ -9,18 +9,6 @@ export async function getStaticPaths() {
         slug,
       },
     })),
-    // paths: [
-    //   {
-    //     params: {
-    //       slug: "first-post",
-    //     },
-    //   },
-    //   {
-    //     params: {
-    //       slug: "second-post",
-    //     },
-    //   },
-    // ],
     //The fallback: false property tells nextjs that if
     //the path do not find any match, the 404 not
     //found page should be showed up
